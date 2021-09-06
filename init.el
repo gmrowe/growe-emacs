@@ -48,12 +48,12 @@
   :ensure t
   :init (show-paren-mode 1)
   :commands (enable-paredit-mode)
-  :hook ((clojure-mode emacs-lisp-mode) . enable-paredit-mode))
+  :hook (emacs-lisp-mode . enable-paredit-mode))
 
 ;;; rainbow-delimeters
 (use-package rainbow-delimiters
   :ensure t
-  :hook ((clojure-mode emacs-lisp-mode) . rainbow-delimiters-mode))
+  :hook (emacs-lisp-mode . rainbow-delimiters-mode))
 
 ;;; ivy
 (use-package ivy
