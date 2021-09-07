@@ -58,10 +58,20 @@
 ;;; ivy
 (use-package ivy
   :ensure t
-  :init (ivy-mode +1)
+  :init (ivy-mode 1)
   :custom
   (ivy-use-virtual-buffers t)
   (ivy-count-format "(%d/%d) "))
+
+;;; recentf
+(use-package recentf
+  :ensure t
+  :init (recentf-mode 1)
+  :bind ("C-x C-r" . recentf-open-files)
+  :custom
+  (setq recentf-max-menu-items 50)
+  (setq recentf-max-saved-items 50)
+  )
 
 
 ;;; undo-tree
@@ -84,7 +94,7 @@
   :init
   (ido-mode +1)
   (ido-everywhere +1)
-  :config (ido-ubiquitous-mode +1))
+  :config (ido-ubiquitous-mode 1))
 
 (use-package speed-type
   :ensure t
