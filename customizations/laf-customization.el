@@ -50,3 +50,14 @@
 
 ;; do not need to create lock-files
 (setq create-lockfiles nil)
+
+;; toggle fullscreen mode on mac
+(defun mac-toggle-max-window ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen 
+    (if (frame-parameter nil 'fullscreen)
+      nil
+      'fullboth)))
+
+(define-key global-map [(alt return)] 
+  'mac-toggle-max-window)
