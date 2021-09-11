@@ -38,7 +38,7 @@
   "comment or uncomment current line"
   (interactive)
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
-(global-set-key (kbd "C-;") 'toggle-comment-on-line)
+ (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 
 ;; fix weird os x kill error
 ;; https://github.com/flyingmachine/emacs-for-clojure/blob/master/customizations/editing.el
@@ -61,3 +61,6 @@
 
 (define-key global-map [(alt return)] 
   'mac-toggle-max-window)
+
+;; set keybinding for window-swapping 
+(global-set-key (kbd "A-<left>") 'window-swap-states)
