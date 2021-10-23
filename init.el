@@ -118,12 +118,18 @@
       19337 ; A Christmas Carol
       31516 ; The Eyes Have It
       2148  ; The Works of Edgar Allan Poe — Volume 2
-
       ))
-  ;; (dolist (book my-book-list)
-  ;;   (add-to-list 'speed-type-gb-book-list book))
-      (setq speed-type-gb-book-list my-gb-book-list)
-  )
+      (setq speed-type-gb-book-list my-gb-book-list))
+
+;;; which-key
+(use-package which-key
+  :ensure t
+  :init (which-key-mode))
+
+;;; company
+(use-package company
+  :ensure t
+  :hook ((cider-mode cider-repl-mode) . company-mode))
 
 ;; Customizations folder
 (add-to-list 'load-path "~/.emacs.d/customizations")
@@ -139,7 +145,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(speed-type smex undo-tree ivy paredit projectile cider use-package)))
+   '(company ## which-key speed-type smex undo-tree ivy paredit projectile cider use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
