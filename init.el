@@ -70,12 +70,10 @@
   :bind ("C-x C-r" . recentf-open-files)
   :custom
   (setq recentf-max-menu-items 50)
-  (setq recentf-max-saved-items 50)
-  )
+  (setq recentf-max-saved-items 50))
 
 
 ;;; undo-tree
-;;; undo-tree is not on Melpa so it is downloaded into packages directory
 (use-package undo-tree
   :ensure t
   :config (global-undo-tree-mode 1))
@@ -131,6 +129,18 @@
   :ensure t
   :hook ((cider-mode cider-repl-mode) . company-mode))
 
+;; org-superstar
+(use-package org-superstar
+  :ensure t
+  :hook (org-mode . org-superstar-mode))
+
+;; rust-mode
+(use-package rust-mode
+  :ensure t
+  :hook (rust-mode . (lambda () (setq indent-tabs-mode nil)))
+)
+
+
 ;; Customizations folder
 (add-to-list 'load-path "~/.emacs.d/customizations")
 (load "org-mode-customization")
@@ -145,7 +155,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(company ## which-key speed-type smex undo-tree ivy paredit projectile cider use-package)))
+   '(org-superstar company ## which-key speed-type smex undo-tree ivy paredit projectile cider use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

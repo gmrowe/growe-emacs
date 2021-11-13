@@ -14,10 +14,14 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 
 ;;;; start org-mode in indent mode
+;; Currently done per file as a header argument
 ;(setq org-startup-indented t)
 
 ;;;; automatically timestamp when TODO items set to DONE
 (setq org-log-done 'time)
+
+;; Fontofy src blocks in org-mode
+(setq org-src-fontify-natively t)
 
 ;;;; Set TODO States
 (setq org-todo-keywords
@@ -66,5 +70,5 @@
       '(("t"
          "Place a TODO entry in the inbox"
          entry
-        (file+olp "home-tasks.org" "Inbox")
-        "*** TODO %?")))
+         (file+olp "home-tasks.org" "Inbox")
+         "*** TODO %?")))
