@@ -1,0 +1,14 @@
+.DS_Store
+.elpa/
+*~undo-tree~
+auto-save-list/
+bookmarks*
+cider-history
+*#
+*~
+elpa/
+ido.last
+projectile-bookmarks.eld
+recentf
+smex-items
+speed-type/
