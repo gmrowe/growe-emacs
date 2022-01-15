@@ -137,7 +137,8 @@
 ;; rust-mode
 (use-package rust-mode
   :ensure t
-  :hook (rust-mode . (lambda () (setq indent-tabs-mode nil)))
+  :hook ((rust-mode . (lambda () (setq indent-tabs-mode nil)))
+	 (rust-mode . electric-pair-mode))
 )
 
 
