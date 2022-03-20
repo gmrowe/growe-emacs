@@ -88,4 +88,5 @@
 (global-set-key (kbd "C-c w") 'copy-line)
 
 
-
+;; Scroll output in compilation window
+(setq compilation-scroll-output 'first-error)
